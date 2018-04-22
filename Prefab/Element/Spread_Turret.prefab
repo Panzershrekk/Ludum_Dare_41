@@ -65,10 +65,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ee6fc121ddbfd4f85db9fdf5e3eb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 8
-  fireRate: 0.5
-  range: 5
+  damage: 17
+  fireRate: 2
+  range: 3
   turretCost: 100
+  upgradeRatio: 0.7
+  level: 1
 --- !u!212 &212870144235326648
 SpriteRenderer:
   m_ObjectHideFlags: 1

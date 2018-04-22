@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1701154807557362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.76, y: -0.18926597, z: 0}
+  m_LocalPosition: {x: -8.76, y: -0.18926597, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e83f1ea9234a4ad439a2043a40211fe0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -179,7 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1680003149342016, guid: 9496a0da37cfd32408696f6ae5557c86, type: 2}
-  clip: {fileID: 0}
+  target: Objective
+  clip: {fileID: 8300000, guid: e83f1ea9234a4ad439a2043a40211fe0, type: 3}
 --- !u!114 &114774434331943340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,12 +192,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623d0bb2aa1e02148ba7954381c87896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
+  hitpoint: 20
   movementSpeed: 1
   fireRate: 2
-  goldValue: 10
-  damageOnObjective: 5
+  goldValue: 50
+  damageOnObjective: 10
   canShoot: 1
+  isBoss: 0
 --- !u!212 &212680091389002452
 SpriteRenderer:
   m_ObjectHideFlags: 1

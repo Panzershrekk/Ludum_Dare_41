@@ -80,7 +80,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6fb3613128616354f9fcb72604fe6ac5, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -178,12 +178,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623d0bb2aa1e02148ba7954381c87896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 6
+  hitpoint: 13
   movementSpeed: 3
   fireRate: 0
-  goldValue: 15
-  damageOnObjective: 1
+  goldValue: 25
+  damageOnObjective: 3
   canShoot: 0
+  isBoss: 0
 --- !u!114 &114102017826758146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
+  target: Objective
   clip: {fileID: 8300000, guid: 6fb3613128616354f9fcb72604fe6ac5, type: 3}
 --- !u!212 &212501296722638016
 SpriteRenderer:

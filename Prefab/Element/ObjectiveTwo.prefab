@@ -9,46 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1326843224269172}
+  m_RootGameObject: {fileID: 1755379782195432}
   m_IsPrefabParent: 1
---- !u!1 &1326843224269172
+--- !u!1 &1755379782195432
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4097815773429324}
-  - component: {fileID: 33533281216152238}
-  - component: {fileID: 65906263992992512}
-  - component: {fileID: 23480409229445860}
-  - component: {fileID: 114594952172131068}
+  - component: {fileID: 4525926474405696}
+  - component: {fileID: 33059794520486690}
+  - component: {fileID: 23672658355187898}
+  - component: {fileID: 61484187472664638}
+  - component: {fileID: 50168340069598820}
+  - component: {fileID: 114151245627187642}
   m_Layer: 0
-  m_Name: TruckSpawn
-  m_TagString: Untagged
+  m_Name: ObjectiveTwo
+  m_TagString: ObjectiveTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4097815773429324
+--- !u!4 &4525926474405696
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326843224269172}
+  m_GameObject: {fileID: 1755379782195432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.745, y: -0.51, z: -0.12109375}
-  m_LocalScale: {x: 1.0500001, y: 1, z: 1}
+  m_LocalPosition: {x: -6.666518, y: -7.1859465, z: -0.12109375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23480409229445860
+--- !u!23 &23672658355187898
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326843224269172}
+  m_GameObject: {fileID: 1755379782195432}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -77,36 +78,68 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33533281216152238
+--- !u!33 &33059794520486690
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326843224269172}
+  m_GameObject: {fileID: 1755379782195432}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65906263992992512
-BoxCollider:
+--- !u!50 &50168340069598820
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326843224269172}
+  m_GameObject: {fileID: 1755379782195432}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
+--- !u!61 &61484187472664638
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1755379782195432}
   m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114594952172131068
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &114151245627187642
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326843224269172}
+  m_GameObject: {fileID: 1755379782195432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fd64b41fb16514db8ef16aedd72b53, type: 3}
+  m_Script: {fileID: 11500000, guid: 39dc8fad86b8d0446b6b6b2f1b2e301d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 15
-  enemyType: {fileID: 1701154807557362, guid: 32db742236ccb3e48b17e3e9d1f70327, type: 2}
-  nextSpawnAllowed: 15
+  hitpoint: 50
+  hitpointText: {fileID: 0}

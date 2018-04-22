@@ -9,74 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1457678702587240}
+  m_RootGameObject: {fileID: 1513787760867682}
   m_IsPrefabParent: 1
---- !u!1 &1457678702587240
+--- !u!1 &1513787760867682
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4231627595038998}
-  - component: {fileID: 212778843089036882}
-  - component: {fileID: 114920641807219102}
-  - component: {fileID: 114377688918566848}
+  - component: {fileID: 4677443564554182}
+  - component: {fileID: 212169165438773372}
+  - component: {fileID: 114820894942970070}
+  - component: {fileID: 114251659810123244}
   m_Layer: 0
-  m_Name: Gaitling_Turret
+  m_Name: Base_Turret 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4231627595038998
+--- !u!4 &4677443564554182
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1457678702587240}
+  m_GameObject: {fileID: 1513787760867682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.05, y: 3.24, z: 0}
+  m_LocalPosition: {x: -3.007451, y: 1.0009327, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114377688918566848
+--- !u!114 &114251659810123244
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1457678702587240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ee6fc121ddbfd4f85db9fdf5e3eb62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  fireRate: 0.4
-  range: 4
-  turretCost: 200
-  upgradeRatio: 0.7
-  level: 1
---- !u!114 &114920641807219102
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1457678702587240}
+  m_GameObject: {fileID: 1513787760867682}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8837306dc777a5747a927ac7da46c1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1348710346174072, guid: 6e38865dee77f954ca7b4d10920ef0be, type: 2}
---- !u!212 &212778843089036882
+--- !u!114 &114820894942970070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513787760867682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ee6fc121ddbfd4f85db9fdf5e3eb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 4
+  fireRate: 1.5
+  range: 3
+  turretCost: 50
+  upgradeRatio: 0.7
+  level: 1
+--- !u!212 &212169165438773372
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1457678702587240}
+  m_GameObject: {fileID: 1513787760867682}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -105,12 +105,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d0d941e3aec95b44ab0abeabb2a7c312, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6396616c00eb5d1468045b235b457af7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.69, y: 0.78}
+  m_Size: {x: 1.01, y: 0.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

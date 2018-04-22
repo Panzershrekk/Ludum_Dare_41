@@ -53,10 +53,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ee6fc121ddbfd4f85db9fdf5e3eb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 6
+  damage: 15
   fireRate: 3
-  range: 10
+  range: 15
   turretCost: 150
+  upgradeRatio: 0.7
+  level: 1
 --- !u!114 &114691312328686656
 MonoBehaviour:
   m_ObjectHideFlags: 1
