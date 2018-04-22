@@ -10,7 +10,7 @@ public class ImageData : MonoBehaviour, IPointerClickHandler {
 
 	// Use this for initialization
 	void Start () {
-		
+		selectedTurret = GameObject.FindGameObjectWithTag ("Player").GetComponent<MainCharacterCreation> ();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,7 @@ public class ImageData : MonoBehaviour, IPointerClickHandler {
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
+		Debug.Log ("I'm clicked");
 		selectedTurret.turretSelected = associatedTurret;
 	}
 }

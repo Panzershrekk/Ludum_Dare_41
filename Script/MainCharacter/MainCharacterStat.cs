@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainCharacterStat : MonoBehaviour
 {
@@ -21,5 +22,9 @@ public class MainCharacterStat : MonoBehaviour
 	void Update () {
 		goldText.text = "Gold: " + gold;
 		hitpointText.text = "Hitpoint: " + charaterHitPoint;
+		if (charaterHitPoint <= 0) {
+			SceneManager.LoadScene ("MainMenu");
+		}
+			
 	}
 }

@@ -8,6 +8,8 @@ public class TurretStats : MonoBehaviour {
     public float fireRate = 3.0f;
 	public float range = 5.0f;
 	public int turretCost = 0;
+	public float upgradeRatio = 0.7f;
+	public int level = 1;
 
 
     // Use this for initialization

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Objective : MonoBehaviour {
 
@@ -15,5 +17,8 @@ public class Objective : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		hitpointText.text = "Remaining: " + hitpoint;
+		if (hitpoint <= 0)
+			SceneManager.LoadScene ("MainMenu");
+			
 	}
 }

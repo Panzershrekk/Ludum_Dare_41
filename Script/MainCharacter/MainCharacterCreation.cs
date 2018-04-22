@@ -7,6 +7,8 @@ public class MainCharacterCreation : MonoBehaviour {
 	public GameObject turretSelected;
 	public bool canBuild = false;
 	public Hammer hammer;
+	public List<GameObject> predefinedTurret = new List<GameObject>();
+	private int index = 0;
 	public AudioClip clip;
 	AudioSource source;
 
@@ -25,13 +27,36 @@ public class MainCharacterCreation : MonoBehaviour {
 				GetComponent<MainCharacterStat> ().gold -= turretSelected.GetComponent<TurretStats> ().turretCost;
 			}
 		}
+		if (Input.GetKeyDown ("n")) {
+			if (canBuild == true && hammer.isSpotFree == false && hammer.associatedTurret.GetComponent<TurretStats> ().level < 3 && GetComponent<MainCharacterStat> ().gold >= turretSelected.GetComponent<TurretStats> ().turretCost * (turretSelected.GetComponent<TurretStats> ().level + 1) * (turretSelected.GetComponent<TurretStats> ().upgradeRatio)) {
+				hammer.turret = turretSelected;
+				hammer.associatedTurret.GetComponent<TurretStats> ().level += 1;
+				hammer.Upgrade ();
+				source.PlayOneShot (clip);
+				GetComponent<MainCharacterStat> ().gold -= (int)Mathf.Round (turretSelected.GetComponent<TurretStats> ().turretCost * (turretSelected.GetComponent<TurretStats> ().level + 1) * (turretSelected.GetComponent<TurretStats> ().upgradeRatio));
+			}
+		}
+		if (Input.GetKeyDown ("c")) {
+			if (canBuild == true && hammer.isSpotFree == false) {
+				GetComponent<MainCharacterStat> ().gold +=  (int)Mathf.Round (hammer.turret.GetComponent<TurretStats> ().turretCost * hammer.turret.GetComponent<TurretStats> ().level * 0.6f );
+				hammer.RemoveTurret ();
+				hammer.isSpotFree = true;
+				source.PlayOneShot (clip);
+			}
+		}
+		if (Input.GetKeyDown ("s")) {
+			turretSelected = predefinedTurret [index];
+			index++;
+			if (index > 3)
+				index = 0;
+		}
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Hammer")
 		{
-			Debug.Log ("Entering Hammer Zone");
 			canBuild = true;
 			hammer = other.GetComponent<Hammer>();
 		}
@@ -41,7 +66,6 @@ public class MainCharacterCreation : MonoBehaviour {
 	{
 		if (other.tag == "Hammer")
 		{
-			Debug.Log ("Leaving Hammer Zone");
 			canBuild = false;
 			hammer = null;
 		}

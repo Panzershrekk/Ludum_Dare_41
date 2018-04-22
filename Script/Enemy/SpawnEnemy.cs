@@ -6,11 +6,17 @@ public class SpawnEnemy : MonoBehaviour {
 
 	public float spawnRate = 5.0f;
 	public GameObject enemyType;
-	private double nextSpawnAllowed = 1.0f;
-
+	public double nextSpawnAllowed = 1.0f;
+	public string ObjectiveTarget = "Objective";
 	// Use this for initialization
 	void Start()
 	{
+		if (enemyType.GetComponent<EnemyStats> ().isBoss == true) {
+			nextSpawnAllowed = 120f;
+		} else {
+			nextSpawnAllowed = 10f;
+
+		}
 	}
 
 	// Update is called once per frame
@@ -26,6 +32,7 @@ public class SpawnEnemy : MonoBehaviour {
 
 	void CreateEnemy()
 	{
-		Instantiate(enemyType, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+		GameObject monster = Instantiate(enemyType, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+		monster.GetComponent<Base_Enemy_Behavior> ().target = ObjectiveTarget;
 	}
 }

@@ -24,6 +24,13 @@ public class BaseTurretShot : MonoBehaviour {
 					float dist = Vector3.Distance (transform.position, enemy.transform.position);
 					if (dist < stats.range) {
 						if (Time.time > nextAttackAllowed) {
+							Vector3 diff = enemy.transform.position - transform.position;
+							diff.Normalize();
+
+							float rot_z = Mathf.Atan2 (diff.y, diff.x) * Mathf.Rad2Deg;
+							transform.rotation = Quaternion.Euler (0f, 0f, rot_z + 90);
+							/*Quaternion rotation = Quaternion.LookRotation (enemy.transform.position - transform.position, transform.TransformDirection(Vector3.down));
+							transform.rotation = new Quaternion (0, 0, rotation.z, rotation.w);*/
 							nextAttackAllowed = Time.time + stats.fireRate;
 							CreateProjectile ();
 						}
@@ -35,6 +42,7 @@ public class BaseTurretShot : MonoBehaviour {
 
     void CreateProjectile()
     {
-        Instantiate(projectile, new Vector2(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
+        GameObject shot = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
+		shot.GetComponent<ProjectileMovement> ().projectileDamage = stats.damage;
     }
 }

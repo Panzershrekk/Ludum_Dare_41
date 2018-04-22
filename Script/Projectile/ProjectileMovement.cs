@@ -7,6 +7,7 @@ public class ProjectileMovement : MonoBehaviour {
     private GameObject wayPoint;
     private Vector2 wayPointPos;
     public float speed = 20.0f;
+	public int projectileDamage = 1;
 
     // Use this for initialization
     void Start()
@@ -29,7 +30,7 @@ public class ProjectileMovement : MonoBehaviour {
         print(other.name);
         if (other.tag == "Enemy")
         {
-			other.GetComponent<EnemyStats>().hitpoint -= 6/*GetComponent<TurretStats>().damage*/;
+			other.GetComponent<EnemyStats>().hitpoint -= projectileDamage;
         }
         Destroy(gameObject);
     }

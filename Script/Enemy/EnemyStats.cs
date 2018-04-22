@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyStats : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class EnemyStats : MonoBehaviour {
 	public int goldValue = 10;
 	public int damageOnObjective = 1;
 	public bool canShoot = false;
+	public bool isBoss = false;
 
 	void Start () {
 		
@@ -23,6 +25,9 @@ public class EnemyStats : MonoBehaviour {
 			/*AudioSource audio = GetComponent<AudioSource> ();
 			audio.Play ();*/
 			GameObject.FindGameObjectWithTag("Player").GetComponent<MainCharacterStat>().gold += goldValue;
+			if (isBoss == true) {
+				SceneManager.LoadScene ("MainMenu");
+			}
 			Destroy (gameObject);
 		}
 	}

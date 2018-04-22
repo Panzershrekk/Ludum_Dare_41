@@ -5,6 +5,9 @@ using UnityEngine;
 public class Base_Enemy_Behavior : MonoBehaviour {
 
 	public GameObject projectile;
+	public string target;
+	private GameObject[] checkPoints;
+	private int currentIndex = 0;
 	private GameObject wayPoint;
 	private Vector2 wayPointPos;
 	private EnemyStats stats;
@@ -15,7 +18,20 @@ public class Base_Enemy_Behavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		wayPoint = GameObject.FindGameObjectWithTag("Objective");
+
+		checkPoints = new GameObject[GameObject.FindGameObjectsWithTag ("Checkpoint").Length];
+		int i = 0;
+		foreach (GameObject checkpoint in GameObject.FindGameObjectsWithTag("Checkpoint")) {
+			checkPoints [i] = checkpoint;
+			i++;
+		}
+			
+
+
+		if (checkPoints.Length != 0)
+			wayPoint = checkPoints [0];
+		else
+			wayPoint = GameObject.FindGameObjectWithTag(target);
 		wayPointPos = new Vector2(wayPoint.transform.position.x, wayPoint.transform.position.y);
 		stats = GetComponent<EnemyStats> ();
 		source = GetComponent<AudioSource> ();
@@ -25,8 +41,17 @@ public class Base_Enemy_Behavior : MonoBehaviour {
 	void Update () {
 		Vector3 precPos = transform.position;
 		transform.position = Vector3.MoveTowards(transform.position, wayPointPos, stats.movementSpeed * Time.deltaTime);
+		if ((transform.position - checkPoints [currentIndex].transform.position).sqrMagnitude <= 0.2f * 0.2f && currentIndex < checkPoints.Length -1) {
+			currentIndex++;
+			wayPoint = checkPoints [currentIndex];
+			wayPointPos = new Vector2 (wayPoint.transform.position.x, wayPoint.transform.position.y);
+		} else if ((transform.position - checkPoints [currentIndex].transform.position).sqrMagnitude <= 0.2f * 0.2f && currentIndex >= checkPoints.Length -1){
+			wayPoint = GameObject.FindGameObjectWithTag(target);
+			wayPointPos = new Vector2(wayPoint.transform.position.x, wayPoint.transform.position.y);
+		}
 		if (stats.canShoot == true) {
 			if (Time.time > nextAttackAllowed) {
+				source.PlayOneShot (clip);
 				nextAttackAllowed = Time.time + stats.fireRate;
 				CreateProjectile ();
 			}
@@ -35,9 +60,9 @@ public class Base_Enemy_Behavior : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Objective")
+		if (other.tag == target)
 		{
-			GameObject.FindGameObjectWithTag ("Objective").GetComponent<Objective> ().hitpoint -= 1;
+			GameObject.FindGameObjectWithTag (target).GetComponent<Objective> ().hitpoint -= 1;
 			Destroy (gameObject);
 		}
 	}
